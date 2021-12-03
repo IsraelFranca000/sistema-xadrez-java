@@ -1,6 +1,6 @@
 package tabuleiro;
 
-public class Tabuleiro {
+public class Tabuleiro { // Tabuleiro ou Board
 	
 	private int linha;
 	private int coluna;
@@ -12,6 +12,16 @@ public class Tabuleiro {
 		pieces = new Piece[linha][coluna];
 	}
 
+	
+	public Piece piece(int linha, int coluna) {
+		return pieces[linha][coluna];
+	}
+	
+	public Piece piece(Posicao posicao) {
+		return pieces[posicao.getLinha()][posicao.getColuna()];
+	}
+	
+	// ----------------------------------------------
 	public int getLinha() {
 		return linha;
 	}
