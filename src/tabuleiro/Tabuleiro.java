@@ -21,6 +21,11 @@ public class Tabuleiro { // Tabuleiro ou Board
 		return pieces[posicao.getLinha()][posicao.getColuna()];
 	}
 	
+	public void placePiece(Piece piece, Posicao posicao) {
+		pieces[posicao.getLinha()][posicao.getColuna()] = piece;
+		piece.posicao = posicao;
+	}
+	
 	// ----------------------------------------------
 	public int getLinha() {
 		return linha;
