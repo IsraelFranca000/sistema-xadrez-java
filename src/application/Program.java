@@ -15,7 +15,7 @@ public class Program {
 		Scanner scan = new Scanner(System.in);
 		PartidaXadrez partidaXadrez = new PartidaXadrez();
 		
-		while(true) {
+		while(true) { // Com tratamento de Exceção
 			try {
 				UI.clearScreen();
 				
