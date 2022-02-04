@@ -53,7 +53,9 @@ public class PartidaXadrez {
 			throw new XadrezException("Não existe peça nessa posição de Origem");
 		}
 		
-		
+		if(!tabuleiro.piece(posicao).existePeloMenosUmMovimentoPossivel()) {
+			throw new XadrezException("Nao existe movimentos possiveis para a peca escolhida");
+		}
 		
 	}
 

@@ -16,4 +16,9 @@ public class Torre extends XadrezPiece{
 		return "T";
 	}
 	
+	@Override
+	public boolean[][] movimentosPossiveis() {
+		boolean[][] mat = new boolean[getTabuleiro().getLinha()][getTabuleiro().getColuna()];
+		return mat;
+	}
 }
