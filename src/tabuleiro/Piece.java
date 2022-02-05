@@ -1,13 +1,13 @@
 package tabuleiro;
 
 public abstract class Piece {
-	
+
 	protected Posicao posicao;
 	private Tabuleiro tabuleiro;
 	
-	public Piece (Tabuleiro tabuleiro) {
-		this.tabuleiro = tabuleiro;
-		this.posicao = null;
+	public Piece(Tabuleiro board) {
+		this.tabuleiro = board;
+		posicao = null;
 	}
 
 	protected Tabuleiro getTabuleiro() {
@@ -16,22 +16,19 @@ public abstract class Piece {
 	
 	public abstract boolean[][] movimentosPossiveis();
 	
-	public boolean movimentoPossivel(Posicao posicao) {
-		return movimentosPossiveis()[posicao.getLinha()][posicao.getColuna()];
+	public boolean movimentoPossivel(Posicao position) {
+		return movimentosPossiveis()[position.getLinha()][position.getColuna()];
 	}
 	
 	public boolean existePeloMenosUmMovimentoPossivel() {
-		
 		boolean[][] mat = movimentosPossiveis();
-		
-		for(int i = 0; i < mat.length; i++) {
-			for (int j = 0; j < mat.length; j++) {
-				if(mat[i][j]) {
+		for (int i=0; i<mat.length; i++) {
+			for (int j=0; j<mat.length; j++) {
+				if (mat[i][j]) {
 					return true;
 				}
 			}
 		}
-		
 		return false;
 	}
 }

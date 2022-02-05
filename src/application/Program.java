@@ -35,10 +35,6 @@ public class Program {
 				
 				XadrezPiece pieceCapturada = partidaXadrez.performXadrezMove(origem, destino);
 			}
-			catch(XadrezException e) {
-				System.out.println(e.getMessage());
-				scan.nextLine();
-			}
 			catch(InputMismatchException e) {
 				System.out.println(e.getMessage());
 				scan.nextLine();

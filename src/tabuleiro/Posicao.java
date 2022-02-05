@@ -1,7 +1,7 @@
 package tabuleiro;
 
 public class Posicao {
-	
+
 	private int linha;
 	private int coluna;
 	
@@ -10,12 +10,6 @@ public class Posicao {
 		this.coluna = coluna;
 	}
 
-	@Override
-	public String toString() {
-		return linha + ", " + coluna;
-	}
-	
-	// -------------------------------------
 	public int getLinha() {
 		return linha;
 	}
@@ -35,5 +29,10 @@ public class Posicao {
 	public void setValoresPosicao(int linha, int coluna) {
 		this.linha = linha;
 		this.coluna = coluna;
+	}
+	
+	@Override
+	public String toString() {
+		return linha + ", " + coluna;
 	}
 }

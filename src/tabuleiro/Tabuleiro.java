@@ -8,7 +8,7 @@ public class Tabuleiro { // Tabuleiro ou Board
 
 	public Tabuleiro(int linha, int coluna) {
 		if(linha < 1 || coluna < 1)
-			throw new TabuleiroException("Erro criando tabuleiro: é necessário que haja pelo menos 1 linha e 1 coluna.");
+			throw new TabuleiroException("Erro criando tabuleiro: e necessario que haja pelo menos 1 linha e 1 coluna.");
 		this.linhas = linha;
 		this.colunas = coluna;
 		pieces = new Piece[linha][coluna];
@@ -17,19 +17,19 @@ public class Tabuleiro { // Tabuleiro ou Board
 
 	public Piece piece(int linha, int coluna) {
 		if(!positioExists(linha, coluna))
-			throw new TabuleiroException("Posicao não existe no tabuleiro");
+			throw new TabuleiroException("Posicao nao existe no tabuleiro");
 		return pieces[linha][coluna];
 	}
 
 	public Piece piece(Posicao posicao) {
 		if(!positioExists(posicao))
-			throw new TabuleiroException("Posicao não existe no tabuleiro");
+			throw new TabuleiroException("Posicao nao existe no tabuleiro");
 		return pieces[posicao.getLinha()][posicao.getColuna()];
 	}
 
 	public void placePiece(Piece piece, Posicao posicao) {
 		if(existePieceNoTabuleiro(posicao))
-			throw new TabuleiroException("já existe uma peça nessa posição: " + posicao);
+			throw new TabuleiroException("ja existe uma peca nessa posicao: " + posicao);
 		pieces[posicao.getLinha()][posicao.getColuna()] = piece;
 		piece.posicao = posicao;
 	}
@@ -37,7 +37,7 @@ public class Tabuleiro { // Tabuleiro ou Board
 	public Piece removePiece(Posicao posicao) {
 		
 		if(!positioExists(posicao)) {
-			throw new TabuleiroException("Posição não existe no tabuleiro");
+			throw new TabuleiroException("Posicao nao existe no tabuleiro");
 		}
 		
 		if(piece(posicao) == null) {
@@ -61,7 +61,7 @@ public class Tabuleiro { // Tabuleiro ou Board
 
 	public boolean existePieceNoTabuleiro(Posicao posicao) {
 		if(!positioExists(posicao))
-			throw new TabuleiroException("Posicao não existe no tabuleiro");
+			throw new TabuleiroException("Posicao nao existe no tabuleiro");
 		return piece(posicao) != null;
 	}
 	
